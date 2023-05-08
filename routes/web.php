@@ -10,4 +10,4 @@ Route::get('/note', [NoteController::class, 'index']) -> name('note.index');
 Route::get('/note/create', [NoteController::class, 'create'])->name('note.create');
 Route::post('/note/store', [NoteController::class, 'store'])->name('note.store');
 //1.2. Para mostar la info 
-Route::get('/note/show',[NoteController::class, 'show'])->name('note.show');
+Route::get('/note/show/{note}',[NoteController::class, 'show'])->name('note.show');
