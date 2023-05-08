@@ -50,4 +50,11 @@ class NoteController extends Controller
        return view('note.edit', compact('note'));
     }
 
+    //6. Para actualiza la información recibida en el edit
+    public function update(NoteRequest $request, Note $note){
+        //6.1. Actualizamos todo
+        $note->update($request->all());
+        return redirect()->route('note.index')->with('success', 'Nota modificada con éxito');
+    }
+
 }

@@ -13,3 +13,4 @@ Route::post('/note/store', [NoteController::class, 'store'])->name('note.store')
 Route::get('/note/show/{note}',[NoteController::class, 'show'])->name('note.show');
 //1.3. Para editar y actualizar
 Route::get('/note/edit/{note}', [NoteController::class, 'edit'])->name('note.edit');
+Route::put('/note/update/{note}', [NoteController::class, 'update'])->name('note.update');
