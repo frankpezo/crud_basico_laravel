@@ -9,7 +9,7 @@
 <ul>
     {{--3.1. Un forelse --}}
     @forelse($notes as $note)
-
+     <li> <a href="#">{{$note->title}}</a> |   <a href="#">Editar</a> <a href="#">Eliminar</a></li>
     @empty 
     <p>Lista vacía</p>
     @endforelse

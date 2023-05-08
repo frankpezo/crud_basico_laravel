@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    {{--1.1. Incluimos el mensaje--}}
+     @include('layouts.partials.mensaje')
     {{--1. Colocamos el contenido --}}
      @yield('content')
 
