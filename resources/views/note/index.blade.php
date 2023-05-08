@@ -9,7 +9,10 @@
 <ul>
     {{--3.1. Un forelse --}}
     @forelse($notes as $note)
-     <li> <a href="{{route('note.show', $note->id)}}">{{$note->title}}</a> |   <a href="#">Editar</a> <a href="#">Eliminar</a></li>
+     <li> <a href="{{route('note.show', $note->id)}}">{{$note->title}}</a> |
+        {{-- Para editar también debemos mandar el id a la ruta--}} 
+          <a href="{{route('note.edit', $note->id)}}">Editar</a>
+           <a href="#">Eliminar</a></li>
     @empty 
     <p>Lista vacía</p>
     @endforelse

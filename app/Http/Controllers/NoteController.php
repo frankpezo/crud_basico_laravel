@@ -38,11 +38,16 @@ class NoteController extends Controller
        return redirect()->route('note.index')->with('success', 'Nota creada correctamente'); //esto último lo haremos en el request y dentro del create para validar
     }
 
-    //3.1. Para mostar la info
+    //4. Para mostar la info
     //creamos objeto del modelo para poder hacer las visualizaciones
     public function show(Note $note){
     
         return view('note.show', compact('note'));
+    }
+
+    //5. Para traer la información al formulario y poder editarlo
+    public function edit(Note $note){
+       return view('note.edit', compact('note'));
     }
 
 }
