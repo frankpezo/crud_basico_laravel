@@ -6,3 +6,4 @@ use App\Http\Controllers\NoteController;
 
 //1. Creamos la rutas necesarias
 Route::get('/note', [NoteController::class, 'index']) -> name('note.index');
+Route::get('/note/create', [NoteController::class, 'create'])->name('note.create');

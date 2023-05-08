@@ -2,6 +2,8 @@
 @extends('layouts.app')
 {{--2. Contenido--}}
 @section('content')
+ {{--2.1. link para cambiar de pestaña--}}
+ <a href="{{route('note.create')}}">Crear nueva nota</a>
 
 {{-- 3. Mostramos la lista en donde se verán los datos creados--}}
 <ul>
