@@ -10,9 +10,16 @@
     {{--3.1. Un forelse --}}
     @forelse($notes as $note)
      <li> <a href="{{route('note.show', $note->id)}}">{{$note->title}}</a> |
-        {{-- Para editar también debemos mandar el id a la ruta--}} 
+        {{-- 3.2. Para editar también debemos mandar el id a la ruta--}} 
           <a href="{{route('note.edit', $note->id)}}">Editar</a>
-           <a href="#">Eliminar</a></li>
+         {{--3.3. Para elimiar debemos hacerlo como un botón y es necesario el formulario--}}
+         <form action="{{route('note.delete', $note->id)}}" method="POST">
+            {{--3.3.1. Convertimos en método delete--}}
+            @method('DELETE')
+            {{--3.3.2. Hacemos seguro --}}
+             @csrf
+            <input type="submit" value="Eliminar">
+         </form>
     @empty 
     <p>Lista vacía</p>
     @endforelse
