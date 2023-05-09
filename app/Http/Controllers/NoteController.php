@@ -63,7 +63,7 @@ class NoteController extends Controller
 
     //7. Para eliminar el elemento
     public function delete(Note $note):RedirectResponse
-    {
+    { 
       //7.1. Eliminamos con la función estática: delete
       $note->delete();
         return redirect()->route('note.index')->with('danger', 'Elemento eliminado');
